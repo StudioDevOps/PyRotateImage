@@ -12,7 +12,7 @@ from PIL import Image
 from os import listdir
 from os.path import isfile, join
 
-mypath = "/Volumes/bucket/instaphoto/"
+mypath = "/mnt/instaphoto/"
 #mypath = input('Enter the direcotory path surrounded by quoation marks " :  ')
 
 ImgUpperExt = ['.JPG','.PNG','.BMP','.GIF']
@@ -35,15 +35,11 @@ fileTargets = [f for f in fileOrig if f not in fileComplMatch]
 bgfileTargets = [f for f in listdir(bgdirOrig) if isfile(join(bgdirOrig, f)) and f.endswith(ImgFileExt) and not f.startswith(".")]
 
 if not fileTargets:
-  print("")
   print("Either all files have been converted or there are no files to convert")
-  print("")
 
 else:
-  print("")
   print("These files will be adjustedi:")
   print(fileTargets)
-  print("")
 
   for f in fileTargets:
     pathOrig = dirOrig + f
@@ -78,9 +74,6 @@ else:
     img.save(pathNew)
     print(fileNew + " saved!")
 
-  print("")
-  print("All files adjusted.")
-  print("That was easy!")
-  print("")
+  print("All files adjusted. That was easy!")
 
 
